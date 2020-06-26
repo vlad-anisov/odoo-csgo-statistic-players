@@ -1,0 +1,10 @@
+<odoo>
+    <report
+        id="report_csgo_player_statistic"
+        model="csgo_player_statistic.player"
+        string="Report players"
+        report_type="qweb-pdf"
+        name="csgo_player_statistic.report_player"
+        file="csgo_player_statistic.report_player"
+    />
+</odoo>
