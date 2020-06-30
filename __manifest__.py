@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'website'],
+    'depends': ['base', 'website',],
 
     # always loaded
     'data': [
@@ -30,10 +30,6 @@
         'reports/report.xml',
         'reports/report_player.xml',
     ],
-    # only loaded in demonstration mode
-    # 'demo': [
-    #     'demo/demo.xml',
-    # ],
     'application':True,
-    # 'post_init_hook': 'load_players',
+    'post_init_hook': 'load_players',
 }

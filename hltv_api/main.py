@@ -4,6 +4,7 @@ import datetime
 from bs4 import BeautifulSoup
 from python_utils import converters
 import csv 
+import os
 
 
 def get_parsed_page(url):
@@ -257,11 +258,12 @@ def get_results_by_date(start_date, end_date):
     return results_list
 
 def top_players_csv():
-    with open('./players.csv', 'w',  encoding='utf-8') as file:
+    with open(os.path.abspath(os.path.dirname(__file__)) + '\csgo_player_statistic.player.csv', 'w',  encoding='utf-8') as file:
         csv_file = csv.writer(file)
-        csv_file.writerow(['country', 'name', 'nickname', 'rating', 'maps-played'])
+        csv_file.writerow(['country', 'name', 'nickname', 'rating', 'maps_played'])
         for player in top_players():
             csv_file.writerow([player['country'].decode("utf-8"), player['name'], player['nickname'].decode("utf-8"), float(player['rating'].decode("utf-8")), int(player['maps-played'].decode("utf-8"))])
+        
 
 if __name__ == "__main__":
     import pprint
