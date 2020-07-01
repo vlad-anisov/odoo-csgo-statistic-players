@@ -32,4 +32,7 @@
     ],
     'application':True,
     'post_init_hook': 'load_players',
+    "external_dependencies": {
+        'python': ['beautifulsoup4', 'bs4', 'python-utils', 'six']
+    }
 }
